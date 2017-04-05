@@ -1,0 +1,7 @@
+plugins:
+  telegram_notifications_enabled:
+    default: false
+  telegram_access_token:
+    default: ''
+  telegram_secret:
+    hidden: true

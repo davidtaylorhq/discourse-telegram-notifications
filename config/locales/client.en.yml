@@ -1,0 +1,5 @@
+en:
+  js:
+    telegram-notifications:
+      preferences-title: "Telegram Notifications"
+      instructions: "Enter the 'Chat ID' you were given by the bot to enable notifications. Empty the box to disable."
