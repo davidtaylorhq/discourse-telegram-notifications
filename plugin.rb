@@ -99,7 +99,7 @@ after_initialize do
 
           chat_id = user.custom_fields["telegram_chat_id"]
 
-          if chat_id.length < 1
+          if not (defined? chat_id) and (chat_id.length < 1)
             return 
           end
 
