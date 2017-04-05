@@ -55,7 +55,7 @@ after_initialize do
             site_title: CGI::escapeHTML(SiteSetting.title),
             chat_id: chat_id,
           )
-        
+
         DiscourseTelegramNotifications::TelegramNotifier.sendMessage(message, chat_id)
       end
 
@@ -68,6 +68,14 @@ after_initialize do
 
   end
   DiscoursePluginRegistry.serialized_current_user_fields << "telegram_chat_id"
+
+  add_to_serializer(:user, :custom_fields, false) {
+    if object.custom_fields == nil then
+      {}
+    else
+      object.custom_fields
+    end
+  }
 
   User.register_custom_field_type('telegram_chat_id', :text)
 
