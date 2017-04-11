@@ -4,58 +4,48 @@ en:
     telegram_access_token: Obtain your bot's access token from the telegram botfather
   discourse_telegram_notifications:
     initial-contact: "To get notifications for %{site_title}, enter the 'Chat ID' %{chat_id} in your user preferences"
+    view_online: "View online"
+    like: "❤️ Like"
+    unlike: "❤️ Unlike"
+    already-liked: "You already liked that post"
+    already-unliked: "You already unliked that post"
+    like-failed: "Liking that post failed"
+    like-success: "Like successful"
+    unlike-failed: "Unliking that post failed"
+    unlike-success: "Unlike successful"
     message:
       mentioned: |-
                 💬 <a href="%{user_url}">@%{username}</a> <b>mentioned</b> you
                 in <a href="%{post_url}">%{topic}</a>
 
                 <pre>%{post_excerpt}</pre>
-
-                🔗 <a href="%{post_url}">View on %{site_title}</a>
       group_mentioned: |-
                 💬 <a href="%{user_url}">@%{username}</a> <b>mentioned</b> you
                 in <a href="%{post_url}">%{topic}</a>
 
                 <pre>%{post_excerpt}</pre>
-
-                🔗 <a href="%{post_url}">View on %{site_title}</a>
-
       quoted: |-
                 💬 <a href="%{user_url}">@%{username}</a> <b>quoted</b> you
                 in <a href="%{post_url}">%{topic}</a>
 
                 <pre>%{post_excerpt}</pre>
-
-                🔗 <a href="%{post_url}">View on %{site_title}</a>
-
       replied: |-
                 ↩️ <a href="%{user_url}">@%{username}</a> <b>replied</b> to you
                 in <a href="%{post_url}">%{topic}</a>
 
                 <pre>%{post_excerpt}</pre>
-
-                🔗 <a href="%{post_url}">View on %{site_title}</a>
-
       posted: |-
                 💬 <a href="%{user_url}">@%{username}</a> <b>posted</b>
                 in <a href="%{post_url}">%{topic}</a>
 
                 <pre>%{post_excerpt}</pre>
-
-                🔗 <a href="%{post_url}">View on %{site_title}</a>
-
       private_message: |-
                 ✉️ <a href="%{user_url}">@%{username}</a> sent you a <b>private message</b>
                 in <a href="%{post_url}">%{topic}</a>
 
                 <pre>%{post_excerpt}</pre>
-
-                🔗 <a href="%{post_url}">View on %{site_title}</a>
-
       linked: |-
                 🔗 <a href="%{user_url}">@%{username}</a> <b>linked</b> to your post
                 from <a href="%{post_url}">%{topic}</a>
 
                 <pre>%{post_excerpt}</pre>
-
-                🔗 <a href="%{post_url}">View on %{site_title}</a>
