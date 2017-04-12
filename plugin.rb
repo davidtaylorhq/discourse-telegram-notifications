@@ -14,7 +14,6 @@ after_initialize do
     PLUGIN_NAME ||= "discourse_telegram_notifications".freeze
 
     autoload :TelegramNotifier, "#{Rails.root}/plugins/discourse-telegram-notifications/services/discourse_telegram_notifications/telegram-notifier"
-    # autoload :TelegramNotifier, "#{Rails.root}/plugins/discourse-telegram-notifications/services/discourse_telegram_notifications/actions"
 
     class Engine < ::Rails::Engine
       engine_name PLUGIN_NAME
@@ -50,12 +49,69 @@ after_initialize do
       if params.key?('message')
 
         chat_id = params['message']['chat']['id']
-        
-        message_text = I18n.t(
+
+        known_user = false
+
+        begin
+          user_custom_field = UserCustomField.find_by(name:"telegram_chat_id", value:chat_id)
+          user = User.find(user_custom_field.user_id)
+          message_text = I18n.t(
+            "discourse_telegram_notifications.known-user",
+            site_title: CGI::escapeHTML(SiteSetting.title),
+            username: user.username
+          )
+          known_user = true
+        rescue Discourse::NotFound
+          message_text = I18n.t(
             "discourse_telegram_notifications.initial-contact",
             site_title: CGI::escapeHTML(SiteSetting.title),
             chat_id: chat_id,
           )
+        end
+
+
+        if known_user and params['message'].key?('reply_to_message')
+            
+          begin
+            reply_to_message_id = params['message']['reply_to_message']['message_id']
+            post_id = PluginStore.get("telegram-notifications", "message_#{reply_to_message_id}")
+            reply_to = Post.find(post_id)
+            found_post = true
+          rescue ActiveRecord::RecordNotFound
+            found_post = false
+          end
+
+          if found_post
+
+            new_post = {
+              raw: params['message']['text'],
+              topic_id: reply_to.topic_id,
+              reply_to_post_number: reply_to.post_number,
+            }
+
+            manager = NewPostManager.new(user, new_post)
+            result = manager.perform
+
+            if result.errors.any?
+              errors = result.errors.full_messages.join("\n")
+
+              message_text = I18n.t(
+                "discourse_telegram_notifications.reply-failed",
+                errors: errors
+              )
+            else
+              message_text = I18n.t(
+                "discourse_telegram_notifications.reply-success",
+                post_url: result.post.full_url
+              )
+            end
+          else
+            message_text = I18n.t("discourse_telegram_notifications.reply-error")
+          end
+
+
+        end
+
 
         message = {
           chat_id: chat_id,
@@ -179,10 +235,17 @@ after_initialize do
             text: message_text,
             parse_mode: "html",
             disable_web_page_preview: true,
-            reply_markup: DiscourseTelegramNotifications::TelegramNotifier.generateReplyMarkup(post, user)
+            reply_markup: DiscourseTelegramNotifications::TelegramNotifier.generateReplyMarkup(post, user),
           }
 
-          DiscourseTelegramNotifications::TelegramNotifier.sendMessage(message)
+          response = DiscourseTelegramNotifications::TelegramNotifier.sendMessage(message)
+
+          if response
+            message_id = response['result']['message_id']
+            
+
+            PluginStore.set("telegram-notifications", "message_#{message_id}", post.id)
+          end
 
         end
       end

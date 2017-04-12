@@ -4,6 +4,10 @@ en:
     telegram_access_token: Obtain your bot's access token from the telegram botfather
   discourse_telegram_notifications:
     initial-contact: "To get notifications for %{site_title}, enter the 'Chat ID' %{chat_id} in your user preferences"
+    known-user: |-
+     Hi %{username}, I'll message you when you have new notifications on %{site_title}. 
+     Replying to a message will post on %{site_title}.
+     To disable, visit your user preferences.
     view_online: "View online"
     like: "❤️ Like"
     unlike: "❤️ Unlike"
@@ -13,6 +17,9 @@ en:
     like-success: "Like successful"
     unlike-failed: "Unliking that post failed"
     unlike-success: "Unlike successful"
+    reply-error: "❌ An error occured while processing your reply"
+    reply-failed: "❌ Reply failed: \n\n %{errors}"
+    reply-success: "✅ Reply successful - view it <a href='%{post_url}'>here</a>"
     message:
       mentioned: |-
                 💬 <a href="%{user_url}">@%{username}</a> <b>mentioned</b> you

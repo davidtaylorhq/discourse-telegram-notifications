@@ -47,7 +47,7 @@ module DiscourseTelegramNotifications
         return false
       end
 
-      return true
+      return responseData
     end
 
     def self.generateReplyMarkup(post, user)
@@ -63,8 +63,8 @@ module DiscourseTelegramNotifications
       {
         inline_keyboard:[
           [
+            {text: likeButtonText, callback_data:likeButtonAction},
             {text: I18n.t("discourse_telegram_notifications.view_online"), url:post.full_url},
-            {text: likeButtonText, callback_data:likeButtonAction}
           ]
         ]
       }
