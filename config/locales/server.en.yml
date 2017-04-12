@@ -6,13 +6,12 @@ en:
     initial-contact: "To get notifications for %{site_title}, enter the 'Chat ID' %{chat_id} in your user preferences"
     known-user: |-
      Hi %{username}, I'll message you when you have new notifications on %{site_title}. 
-     Replying to a message will post on %{site_title}.
+     Replying to a notification will post a reply on %{site_title}.
      To disable, visit your user preferences.
     view_online: "View online"
     like: "❤️ Like"
     unlike: "❤️ Unlike"
     already-liked: "You already liked that post"
-    already-unliked: "You already unliked that post"
     like-failed: "Liking that post failed"
     like-success: "Like successful"
     unlike-failed: "Unliking that post failed"
