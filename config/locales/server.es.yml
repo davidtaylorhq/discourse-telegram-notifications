@@ -3,59 +3,55 @@ es:
     telegram_notifications_enabled: ¿Activar notificaciones de Telegram?
     telegram_access_token: Obtén el token de acceso del botfather de Telegram
   discourse_telegram_notifications:
-    initial-contact: "Para recibir las notificaciones de %{site_title}, introduce el 'Chat ID' %{chat_id} en tus preferencias de la comunidad"
+    initial-contact: "Para recibir notificaciones de %{site_title}, introduce el siguiente código: <b>%{chat_id}</b> en tus preferencias de la comunidad"
+    known-user: |-
+     ¡Hola %{username}! Soy el bot de <b>%{site_title}</b>, te enviaré mensajes cuando tengas nuevas notificaciones.
+     Puedes responder directamente desde esta ventana. Simplemente al contestar a una notificación aquí, se publicará automáticamente en %{site_title}.
+     Puedes desativar notificaciones desde las preferencias de tu usuario en %{site_title}.
+    view_online: "Ver en la web"
+    like: "❤️ Me gusta"
+    unlike: "❤️ No me gusta"
+    already-liked: "Ya habías marcado que te gusta"
+    like-failed: "Fallo al hacer me gusta"
+    like-success: "¡Bien!"
+    unlike-failed: "Fallo al quitar el me gusta"
+    unlike-success: "Quitaste el me gusta de forma correcta"
+    reply-error: "❌ Ocurrió un error al enviar tu respuesta"
+    reply-failed: "❌ Fallo al responder: \n\n %{errors}"
+    reply-success: "✅ Respuesta enviada correctamente, <a href='%{post_url}'>puedes verla aquí</a>"
     message:
       mentioned: |-
                 💬 <a href="%{user_url}">@%{username}</a> te ha <b>mencionado</b>
                 en <a href="%{post_url}">%{topic}</a>
 
                 <pre>%{post_excerpt}</pre>
-
-                🔗 <a href="%{post_url}">Leer más</a>
       group_mentioned: |-
                 💬 <a href="%{user_url}">@%{username}</a> te ha <b>mencionado</b>
                 en <a href="%{post_url}">%{topic}</a>
 
                 <pre>%{post_excerpt}</pre>
-
-                🔗 <a href="%{post_url}">Leer más</a>
-
       quoted: |-
                 💬 <a href="%{user_url}">@%{username}</a> te ha <b>citado</b>
                 en <a href="%{post_url}">%{topic}</a>
 
                 <pre>%{post_excerpt}</pre>
-
-                🔗 <a href="%{post_url}">Leer más</a>
-
       replied: |-
                 ↩️ <a href="%{user_url}">@%{username}</a> te ha <b>contestado</b>
                 en <a href="%{post_url}">%{topic}</a>
 
                 <pre>%{post_excerpt}</pre>
-
-                🔗 <a href="%{post_url}">Leer más</a>
-
       posted: |-
                 💬 <a href="%{user_url}">@%{username}</a> ha <b>publicado</b>
                 en <a href="%{post_url}">%{topic}</a>
 
                 <pre>%{post_excerpt}</pre>
-
-                🔗 <a href="%{post_url}">Leer más</a>
-
       private_message: |-
                 ✉️ <a href="%{user_url}">@%{username}</a> te ha enviado un <b>mensaje privado</b>
                 en <a href="%{post_url}">%{topic}</a>
 
                 <pre>%{post_excerpt}</pre>
-
-                🔗 <a href="%{post_url}">Leer más</a>
-
       linked: |-
                 🔗 <a href="%{user_url}">@%{username}</a> ha <b>enlazado</b> tu hilo
                 desde <a href="%{post_url}">%{topic}</a>
 
                 <pre>%{post_excerpt}</pre>
-
-                🔗 <a href="%{post_url}">Leer más</a>
