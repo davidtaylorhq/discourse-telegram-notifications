@@ -61,7 +61,7 @@ after_initialize do
             username: user.username
           )
           known_user = true
-        rescue Discourse::NotFound
+        rescue Discourse::NotFound, NoMethodError
           message_text = I18n.t(
             "discourse_telegram_notifications.initial-contact",
             site_title: CGI::escapeHTML(SiteSetting.title),
