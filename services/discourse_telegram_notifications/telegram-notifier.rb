@@ -60,11 +60,12 @@ module DiscourseTelegramNotifications
         likeButtonText = I18n.t("discourse_telegram_notifications.like")
         likeButtonAction = "like:#{post.id}"
       end
+      post_url = "#{Discourse.base_url}#{post.url(opts={without_slug: true})}"
       {
         inline_keyboard:[
           [
             {text: likeButtonText, callback_data:likeButtonAction},
-            {text: I18n.t("discourse_telegram_notifications.view_online"), url:post.full_url},
+            {text: I18n.t("discourse_telegram_notifications.view_online"), url:post_url},
           ]
         ]
       }
