@@ -1,0 +1,5 @@
+it:
+  js:
+    telegram-notifications:
+      preferences-title: "Notifiche Telegram"
+      instructions: "Inserisci lo 'Chat ID' che hai ricevuto dal bot per abilitare le notifiche. Lascia vuoto il box per disabilitarle."
