@@ -192,8 +192,9 @@ after_initialize do
   User.register_custom_field_type('telegram_chat_id', :text)
 
   DiscourseEvent.on(:post_notification_alert) do |user, payload|
-    return unless SiteSetting.telegram_notifications_enabled?
-    Jobs.enqueue(:send_telegram_notifications, {user_id: user.id, payload: payload})
+    if SiteSetting.telegram_notifications_enabled?
+      Jobs.enqueue(:send_telegram_notifications, {user_id: user.id, payload: payload})
+    end
   end
 
   DiscourseEvent.on(:site_setting_saved) do |sitesetting|
