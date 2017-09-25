@@ -32,7 +32,7 @@ after_initialize do
   class DiscourseTelegramNotifications::TelegramController < ::ApplicationController
     requires_plugin DiscourseTelegramNotifications::PLUGIN_NAME
 
-    skip_before_filter :check_xhr, :preload_json, :verify_authenticity_token, :redirect_to_login_if_required
+    skip_before_action :check_xhr, :preload_json, :verify_authenticity_token, :redirect_to_login_if_required
 
     def hook
       if not SiteSetting.telegram_notifications_enabled
