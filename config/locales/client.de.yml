@@ -1,0 +1,5 @@
+en:
+  js:
+    telegram-notifications:
+      preferences-title: "Telegram Benachrichtigungen"
+      instructions: "Gib die 'Chat ID' die du bekommen hast hier ein um Benachrichtigungen zu bekommen. Lasse dieses Feld leer, um die Funktion zu deaktivieren"
