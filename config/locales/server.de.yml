@@ -3,9 +3,9 @@ de:
     telegram_notifications_enabled: Telegram Benachrichtigungen aktivieren?
     telegram_access_token: Hol dir vom BotFather einen Bot Access Token
   discourse_telegram_notifications:
-    initial-contact: "Um Benachrichtigungen von%{site_title} zu bekommen, gib die 'Chat ID' %{chat_id} in deinen User-Einstellungen ein"
+    initial-contact: "Um Benachrichtigungen von %{site_title} zu bekommen, gib die 'Chat ID' <b>%{chat_id}</b> in deinen User-Einstellungen ein"
     known-user: |-
-     Hey %{username}, ich werde dir schreiben wenn du neue Benachrichtigungen bei %{site_title} hast. 
+     Hey %{username}, ich werde dir schreiben, wenn du neue Benachrichtigungen bei %{site_title} hast. 
      Wenn du auf diese Nachricht antwortest, antwortest du gleichzeitig auf das Thema bei %{site_title}.
      Zum deaktivieren, besuche deine User-Einstellungen.
     view_online: "View online"
