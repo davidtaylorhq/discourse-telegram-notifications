@@ -1,14 +1,14 @@
 de:
   site_settings:
     telegram_notifications_enabled: Telegram Benachrichtigungen aktivieren?
-    telegram_access_token: Hol dir vom BotFather einen Bot Access Token
+    telegram_access_token: Hol dir vom BotFather einen Bot Access Token und gib ihn hier ein
   discourse_telegram_notifications:
-    initial-contact: "Um Benachrichtigungen von %{site_title} zu bekommen, gib die 'Chat ID' <b>%{chat_id}</b> in deinen User-Einstellungen ein"
+    initial-contact: "Um Benachrichtigungen von %{site_title} zu bekommen, gib die 'Chat ID' <b>%{chat_id}</b> in deinen User-Einstellungen ein!"
     known-user: |-
      Hey %{username}, ich werde dir schreiben, wenn du neue Benachrichtigungen bei %{site_title} hast. 
-     Wenn du auf diese Nachricht antwortest, antwortest du gleichzeitig auf das Thema bei %{site_title}.
+     Wenn du auf diese Nachricht antwortest, antwortest du gleichzeitig auf das Thema oder die Private Nachricht bei %{site_title}.
      Zum deaktivieren, besuche deine User-Einstellungen.
-    view_online: "View online"
+    view_online: "Zum Forum"
     like: "❤️ Gefällt mir"
     unlike: "❤️ Gefällt mir nicht"
     already-liked: "Du hast diesen Beitrag bereits mit \"Gefällt mir\" markiert"
@@ -33,18 +33,18 @@ de:
                 in <a href="%{post_url}">%{topic}</a> zitiert
                 <pre>%{post_excerpt}</pre>
       replied: |-
-                ↩️ <a href="%{user_url}">@%{username}</a> <b>replied</b> to you
-                in <a href="%{post_url}">%{topic}</a>
+                ↩️ <a href="%{user_url}">@%{username}</a> hat dir in <a href="%{post_url}">%{topic}</a>
+                <b>geantwortet</b>
                 <pre>%{post_excerpt}</pre>
       posted: |-
-                💬 <a href="%{user_url}">@%{username}</a> <b>antwortete</b>
-                in <a href="%{post_url}">%{topic}</a>
+                💬 <a href="%{user_url}">@%{username}</a> hat in <a href="%{post_url}">%{topic}</a>
+                <b>geantwortet</b>
                 <pre>%{post_excerpt}</pre>
       private_message: |-
                 ✉️ <a href="%{user_url}">@%{username}</a> hat dir eine <b>Private Nachricht</b>
                 gesendet <a href="%{post_url}">%{topic}</a>
                 <pre>%{post_excerpt}</pre>
       linked: |-
-                🔗 <a href="%{user_url}">@%{username}</a> hat dich in seinem thema
-                 thema <a href="%{post_url}">%{topic}</a> <b>verlinkt</b>
+                🔗 <a href="%{user_url}">@%{username}</a> hat dich in
+                <a href="%{post_url}">%{topic}</a> <b>verlinkt</b>
                 <pre>%{post_excerpt}</pre>
