@@ -181,15 +181,8 @@ after_initialize do
   end
   DiscoursePluginRegistry.serialized_current_user_fields << "telegram_chat_id"
 
-  add_to_serializer(:user, :custom_fields, false) {
-    if object.custom_fields == nil then
-      {}
-    else
-      object.custom_fields
-    end
-  }
-
   User.register_custom_field_type('telegram_chat_id', :text)
+  register_editable_user_custom_field :telegram_chat_id
 
   DiscourseEvent.on(:post_notification_alert) do |user, payload|
     if SiteSetting.telegram_notifications_enabled?
