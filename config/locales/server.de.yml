@@ -48,3 +48,11 @@ de:
                 🔗 <a href="%{user_url}">@%{username}</a> hat dich in
                 <a href="%{post_url}">%{topic}</a> <b>verlinkt</b>
                 <pre>%{post_excerpt}</pre>
+      following_replied: |-
+                ↩️ <a href="%{user_url}">@%{username}</a> hat dir in <a href="%{post_url}">%{topic}</a>
+                <b>geantwortet</b>
+                <pre>%{post_excerpt}</pre>
+      following_posted: |-
+                💬 <a href="%{user_url}">@%{username}</a> hat in <a href="%{post_url}">%{topic}</a>
+                <b>geantwortet</b>
+                <pre>%{post_excerpt}</pre>

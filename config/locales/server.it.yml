@@ -55,3 +55,13 @@ it:
                 da <a href="%{post_url}">%{topic}</a>
 
                 <pre>%{post_excerpt}</pre>
+      following_replied: |-
+                ↩️ <a href="%{user_url}">@%{username}</a> <b>ti ha risposto</b>
+                in <a href="%{post_url}">%{topic}</a>
+
+                <pre>%{post_excerpt}</pre>
+      following_posted: |-
+                💬 <a href="%{user_url}">@%{username}</a> <b>ha postato</b>
+                in <a href="%{post_url}">%{topic}</a>
+
+                <pre>%{post_excerpt}</pre>
