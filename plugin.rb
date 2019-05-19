@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # name: discourse-telegram-notifications
 # about: A plugin which posts all user notifications to a telegram message
 # version: 0.1
@@ -28,7 +30,7 @@ after_initialize do
   Discourse::Application.routes.append do
     mount ::DiscourseTelegramNotifications::Engine, at: "/telegram"
   end
-  
+
   class DiscourseTelegramNotifications::TelegramController < ::ApplicationController
     requires_plugin DiscourseTelegramNotifications::PLUGIN_NAME
 
@@ -39,12 +41,12 @@ after_initialize do
         render status: 404
       end
 
-      if not (defined? params['key'] and params['key'] == SiteSetting.telegram_secret)
+      if not (defined? params['key'] && (params['key'] == SiteSetting.telegram_secret))
         Rails.logger.error("Telegram hook called with incorrect key")
         render status: 403
         return
       end
-      
+
       # If it's a new message (telegram also sends hooks for other reasons that we don't care about)
       if params.key?('message')
 
@@ -53,7 +55,7 @@ after_initialize do
         known_user = false
 
         begin
-          user_custom_field = UserCustomField.find_by(name:"telegram_chat_id", value:chat_id)
+          user_custom_field = UserCustomField.find_by(name: "telegram_chat_id", value: chat_id)
           user = User.find(user_custom_field.user_id)
           message_text = I18n.t(
             "discourse_telegram_notifications.known-user",
@@ -69,9 +71,8 @@ after_initialize do
           )
         end
 
+        if known_user && params['message'].key?('reply_to_message')
 
-        if known_user and params['message'].key?('reply_to_message')
-            
           begin
             reply_to_message_id = params['message']['reply_to_message']['message_id']
             post_id = PluginStore.get("telegram-notifications", "message_#{reply_to_message_id}")
@@ -109,9 +110,7 @@ after_initialize do
             message_text = I18n.t("discourse_telegram_notifications.reply-error")
           end
 
-
         end
-
 
         message = {
           chat_id: chat_id,
@@ -123,7 +122,7 @@ after_initialize do
         DiscourseTelegramNotifications::TelegramNotifier.sendMessage(message)
       elsif params.key?('callback_query')
         chat_id = params['callback_query']['message']['chat']['id']
-        user_id = UserCustomField.where(name:"telegram_chat_id", value:chat_id).first.user_id
+        user_id = UserCustomField.where(name: "telegram_chat_id", value: chat_id).first.user_id
         user = User.find(user_id)
 
         data = params['callback_query']['data'].split(":")
@@ -186,12 +185,12 @@ after_initialize do
 
   DiscourseEvent.on(:post_notification_alert) do |user, payload|
     if SiteSetting.telegram_notifications_enabled?
-      Jobs.enqueue(:send_telegram_notifications, {user_id: user.id, payload: payload})
+      Jobs.enqueue(:send_telegram_notifications, user_id: user.id, payload: payload)
     end
   end
 
   DiscourseEvent.on(:site_setting_saved) do |sitesetting|
-    if sitesetting.name == 'telegram_notifications_enabled' or sitesetting.name == 'telegram_access_token'
+    if (sitesetting.name == 'telegram_notifications_enabled') || (sitesetting.name == 'telegram_access_token')
       Jobs.enqueue(:setup_telegram_webhook)
     end
   end
@@ -205,23 +204,23 @@ after_initialize do
 
           chat_id = user.custom_fields["telegram_chat_id"]
 
-          if (not chat_id.present?) or (chat_id.length < 1)
-            return 
+          if (not chat_id.present?) || (chat_id.length < 1)
+            return
           end
 
           payload = args[:payload]
 
-          post = Post.where(post_number:payload[:post_number], topic_id:payload[:topic_id]).first
+          post = Post.where(post_number: payload[:post_number], topic_id: payload[:topic_id]).first
 
           message_text = I18n.t(
               "discourse_telegram_notifications.message.#{Notification.types[payload[:notification_type]]}",
               site_title: CGI::escapeHTML(SiteSetting.title),
               site_url: Discourse.base_url,
-              post_url: Discourse.base_url+payload[:post_url],
+              post_url: Discourse.base_url + payload[:post_url],
               post_excerpt: CGI::escapeHTML(payload[:excerpt]),
               topic: CGI::escapeHTML(payload[:topic_title]),
               username: CGI::escapeHTML(payload[:username]),
-              user_url: Discourse.base_url+"/u/"+payload[:username]
+              user_url: Discourse.base_url + "/u/" + payload[:username]
             )
 
           message = {
@@ -236,7 +235,6 @@ after_initialize do
 
           if response
             message_id = response['result']['message_id']
-            
 
             PluginStore.set("telegram-notifications", "message_#{message_id}", post.id)
           end
@@ -247,7 +245,7 @@ after_initialize do
       class SetupTelegramWebhook < Jobs::Base
         def execute(args)
           return if !SiteSetting.telegram_notifications_enabled?
-          
+
           SiteSetting.telegram_secret = SecureRandom.hex
 
           DiscourseTelegramNotifications::TelegramNotifier.setupWebhook(SiteSetting.telegram_secret)
