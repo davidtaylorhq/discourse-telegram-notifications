@@ -133,7 +133,7 @@ after_initialize do
 
         if data[0] == "like"
           begin
-            PostActionCreator.create(user, post, PostActionType.types[:like])
+            PostActionCreator.create(user, post, :like)
             string = I18n.t("discourse_telegram_notifications.like-success")
           rescue PostAction::AlreadyActed
             string = I18n.t("discourse_telegram_notifications.already-liked")
