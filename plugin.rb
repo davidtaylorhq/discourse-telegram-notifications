@@ -197,7 +197,7 @@ after_initialize do
 
   require_dependency "jobs/base"
     module ::Jobs
-      class SendTelegramNotifications < Jobs::Base
+      class SendTelegramNotifications < ::Jobs::Base
         def execute(args)
           return if !SiteSetting.telegram_notifications_enabled?
           user = User.find(args[:user_id])
@@ -242,7 +242,7 @@ after_initialize do
         end
       end
 
-      class SetupTelegramWebhook < Jobs::Base
+      class SetupTelegramWebhook < ::Jobs::Base
         def execute(args)
           return if !SiteSetting.telegram_notifications_enabled?
 
