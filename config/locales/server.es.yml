@@ -55,3 +55,13 @@ es:
                 desde <a href="%{post_url}">%{topic}</a>
 
                 <pre>%{post_excerpt}</pre>
+      following_replied: |-
+                ↩️ <a href="%{user_url}">@%{username}</a> te ha <b>contestado</b>
+                en <a href="%{post_url}">%{topic}</a>
+
+                <pre>%{post_excerpt}</pre>
+      following_posted: |-
+                💬 <a href="%{user_url}">@%{username}</a> ha <b>publicado</b>
+                en <a href="%{post_url}">%{topic}</a>
+
+                <pre>%{post_excerpt}</pre>
