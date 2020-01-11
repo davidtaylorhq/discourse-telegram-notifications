@@ -55,13 +55,19 @@ en:
                 from <a href="%{post_url}">%{topic}</a>
 
                 <pre>%{post_excerpt}</pre>
+      watching_first_post: |-
+                💬 <a href="%{user_url}">@%{username}</a> <b>posted</b>
+                in <a href="%{post_url}">%{topic}</a>
+
+                <pre>%{post_excerpt}</pre>
+      # Discourse Follow Plugin
       following_replied: |-
-                ↩️ <a href="%{user_url}">@%{username}</a> <b>replied</b> to you
+                ↩️👥 <a href="%{user_url}">@%{username}</a> <b>replied</b>
                 in <a href="%{post_url}">%{topic}</a>
 
                 <pre>%{post_excerpt}</pre>
       following_posted: |-
-                💬 <a href="%{user_url}">@%{username}</a> <b>posted</b>
+                💬👥 <a href="%{user_url}">@%{username}</a> <b>posted</b>
                 in <a href="%{post_url}">%{topic}</a>
 
                 <pre>%{post_excerpt}</pre>
