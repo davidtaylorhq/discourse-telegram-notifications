@@ -55,8 +55,20 @@ es:
                 desde <a href="%{post_url}">%{topic}</a>
 
                 <pre>%{post_excerpt}</pre>
+      
+      watching_first_post: |-
+                💬 <a href="%{user_url}">@%{username}</a> ha <b>publicado</b>
+                en <a href="%{post_url}">%{topic}</a>
+
+                <pre>%{post_excerpt}</pre>
+      # Discourse Follow Plugin
       following_replied: |-
-                👥 <a href="%{user_url}">@%{username}</a> ha <b>publicado</b>
+                ↩️👥 <a href="%{user_url}">@%{username}</a> ha <b>respondido</b>
+                en <a href="%{post_url}">%{topic}</a>
+
+                <pre>%{post_excerpt}</pre>
+      following_posted: |-
+                💬👥 <a href="%{user_url}">@%{username}</a> <b>publicó</b>
                 en <a href="%{post_url}">%{topic}</a>
 
                 <pre>%{post_excerpt}</pre>
