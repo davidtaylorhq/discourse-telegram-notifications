@@ -55,3 +55,19 @@ it:
                 da <a href="%{post_url}">%{topic}</a>
 
                 <pre>%{post_excerpt}</pre>
+      watching_first_post: |-
+                💬 <a href="%{user_url}">@%{username}</a> <b>ha postato</b>
+                in <a href="%{post_url}">%{topic}</a>
+
+                <pre>%{post_excerpt}</pre>
+      # Discourse Follow Plugin
+      following_replied: |-
+                ↩️👥 <a href="%{user_url}">@%{username}</a> <b>ha risposto</b>
+                in <a href="%{post_url}">%{topic}</a>
+
+                <pre>%{post_excerpt}</pre>
+      following_posted: |-
+                💬👥 <a href="%{user_url}">@%{username}</a> <b>ha postato</b>
+                in <a href="%{post_url}">%{topic}</a>
+
+                <pre>%{post_excerpt}</pre>
