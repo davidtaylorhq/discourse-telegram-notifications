@@ -58,3 +58,5 @@ es:
       following_replied: |-
                 👥 <a href="%{user_url}">@%{username}</a> ha <b>publicado</b>
                 en <a href="%{post_url}">%{topic}</a>
+
+                <pre>%{post_excerpt}</pre>
