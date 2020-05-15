@@ -1,0 +1,5 @@
+pl_PL:
+  js:
+    telegram-notifications:
+      preferences-title: "Powiadomienia - Telegram"
+      instructions: "Wprowadź 'Chat ID' otrzymany od bota (pole puste - powiadomienia nie są włączone)."
