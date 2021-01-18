@@ -1,0 +1,58 @@
+en:
+  site_settings:
+    telegram_notifications_enabled: הפעלת התראות טלגרם
+    telegram_access_token: אסימון הגישה של הבוט שלך, מ-botfather
+  discourse_telegram_notifications:
+    initial-contact: "לקבלת התראות מהאתר %{site_title}, יש להכניס את מספר זיהוי הצ'אט %{chat_id} בהעדפות המשתמש שלך (תחת "פרופיל""
+    known-user: |-
+     היי %{username}, אני אשלח לך הודעה כשיהיו לך התראות חדשות באתר %{site_title}. 
+     הגבה ישירה להודעה כאן תשלח גם לאתר %{site_title}.
+     כדי להפסיק לקבל כאן הודעות, צריך למחוק את מספר זיהוי הצ'אט בהעדפות המשתש שלך באתר. 
+    view_online: "לצפיה בפורום"
+    like: "❤️ אהבתי"
+    unlike: "❤️ לא אהבתי"
+    already-liked: "כבר אהבת פוסט זה"
+    like-failed: "לא הצלחתי לבצע את הפעולה :("
+    like-success: "אהבתי שאהבת!"
+    unlike-failed: "לא הצלחתי לבצע את הפעולה :("
+    unlike-success: "בוצע בהצלחה"
+    reply-error: "❌ אריעה שגיאה בעת ביצוע הפעולה"
+    reply-failed: "❌ שליחת התגובה נכשלה: \n\n %{errors}"
+    reply-success: "✅ הגבת בהצלחה! לצפיה כאן: <a href='%{post_url}'>here</a>"
+    message:
+      mentioned: |-
+                💬 <a href="%{user_url}">@%{username}</a> <b>הזכיר</b> אותך ב <a href="%{post_url}">%{topic}</a>
+                <pre>%{post_excerpt}</pre>
+      group_mentioned: |-
+                💬 <a href="%{user_url}">@%{username}</a> <b>הזכיר</b> אותך  ב <a href="%{post_url}">%{topic}</a>
+                <pre>%{post_excerpt}</pre>
+      quoted: |-
+                💬 <a href="%{user_url}">@%{username}</a> <b>ציטט</b> אותך ב <a href="%{post_url}">%{topic}</a>
+                <pre>%{post_excerpt}</pre>
+      replied: |-
+                ↩️ <a href="%{user_url}">@%{username}</a> <b>הגיב</b> לך ב <a href="%{post_url}">%{topic}</a>
+                <pre>%{post_excerpt}</pre>
+      posted: |-
+                💬 <a href="%{user_url}">@%{username}</a> <b>הגיב</b>
+                ב <a href="%{post_url}">%{topic}</a>
+                <pre>%{post_excerpt}</pre>
+      private_message: |-
+                ✉️ <a href="%{user_url}">@%{username}</a> שלח לך <b>הודעה פרטית</b>
+                ב <a href="%{post_url}">%{topic}</a>
+                <pre>%{post_excerpt}</pre>
+      linked: |-
+                🔗 <a href="%{user_url}">@%{username}</a> <b>העלה לינק</b> לפוסט שלך: <a href="%{post_url}">%{topic}</a>
+                <pre>%{post_excerpt}</pre>
+      watching_first_post: |-
+                💬 <a href="%{user_url}">@%{username}</a> <b>הגיב</b>
+                ב <a href="%{post_url}">%{topic}</a>
+                <pre>%{post_excerpt}</pre>
+      # Discourse Follow Plugin
+      following_replied: |-
+                ↩️👥 <a href="%{user_url}">@%{username}</a> <b>השיב</b>
+                ב <a href="%{post_url}">%{topic}</a>
+                <pre>%{post_excerpt}</pre>
+      following_posted: |-
+                💬👥 <a href="%{user_url}">@%{username}</a> <b>הגיב</b>
+                ב <a href="%{post_url}">%{topic}</a>
+                <pre>%{post_excerpt}</pre>
