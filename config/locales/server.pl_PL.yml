@@ -1,4 +1,4 @@
-en:
+pl_PL:
   site_settings:
     telegram_notifications_enabled: Włączone powiadomienia z telegramu?
     telegram_access_token: Uzyskaj token dostępu do swojego bota
