@@ -1,0 +1,61 @@
+pl_PL:
+  site_settings:
+    telegram_notifications_enabled: Włączone powiadomienia z telegramu?
+    telegram_access_token: Uzyskaj token dostępu do swojego bota
+  discourse_telegram_notifications:
+    initial-contact: "Aby otrzymywać powiadomienia %{site_title}, wprowadź 'Chat ID' %{chat_id} w preferencjach użytkownika."
+    known-user: |-
+     Witaj %{username}, wyślemy ci wiadomość o nowych powiadomieniach na %{site_title}.
+     Odpowiadając na powiadomienie opublikuję odpowiedź na %{site_title}.
+     Aby wyłączyć, odwiedź ustawienia użytkownika.
+    view_online: "Zobacz online"
+    like: "Lajkuj"
+    unlike: "Wycofaj lajka"
+    already-liked: "Właśnie zalajkowałeś ten post"
+    like-failed: "Nie udało się zalajkować"
+    like-success: "Pomyślnie zalajkowano wpis"
+    unlike-failed: "Nie udało się zaprzestać lajkować ;)"
+    unlike-success: "Pomyślnie wycofano lajka"
+    reply-error: "❌ Błąd podczas przetwarzania odpowiedzi."
+    reply-failed: "❌ Odpowiedź nie powiodła się: \n\n %{errors}"
+    reply-success: "✅ Pomyślnie odpowiedziano - wyświetl to <a href='%{post_url}'>here</a>"
+    message:
+      mentioned: |-
+                💬 <a href="%{user_url}">@%{username}</a> <b>wspomina</b> o Tobie w  
+                <a href="%{post_url}">%{topic}</a>
+
+                <pre>%{post_excerpt}</pre>
+      group_mentioned: |-
+                💬 <a href="%{user_url}">@%{username}</a> <b>wspomina</b> o Tobie w  <a href="%{post_url}">%{topic}</a>
+
+                <pre>%{post_excerpt}</pre>
+      quoted: |-
+                💬 <a href="%{user_url}">@%{username}</a> <b>cytuje</b> Ciebie w <a href="%{post_url}">%{topic}</a>
+
+                <pre>%{post_excerpt}</pre>
+      replied: |-
+                ↩️ <a href="%{user_url}">@%{username}</a> <b>odpowiada</b> tobie w <a href="%{post_url}">%{topic}</a>
+
+                <pre>%{post_excerpt}</pre>
+      posted: |-
+                💬 <a href="%{user_url}">@%{username}</a> <b>napisał</b>
+                w <a href="%{post_url}">%{topic}</a>
+
+                <pre>%{post_excerpt}</pre>
+      private_message: |-
+                ✉️ <a href="%{user_url}">@%{username}</a> wysłał Tobie <b>prywatną wiadomość</b>
+                in <a href="%{post_url}">%{topic}</a>
+
+                <pre>%{post_excerpt}</pre>
+      linked: |-
+                🔗 <a href="%{user_url}">@%{username}</a> <b>wysłał odnośnik</b> do Twojego postu z <a href="%{post_url}">%{topic}</a>
+
+                <pre>%{post_excerpt}</pre>
+      following_replied: |-
+                ↩️ Obserwowany <a href="%{user_url}">@%{username}</a> <b>odpowiedział</b> w <a href="%{post_url}">%{topic}</a>
+
+                <pre>%{post_excerpt}</pre>
+      following_posted: |-
+                ↩️ Obserwowany <a href="%{user_url}">@%{username}</a> utworzył <b>nowy temat:</b> <a href="%{post_url}">%{topic}</a>
+
+                <pre>%{post_excerpt}</pre>
