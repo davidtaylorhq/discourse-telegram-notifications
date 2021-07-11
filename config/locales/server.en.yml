@@ -24,50 +24,50 @@ en:
                 💬 <a href="%{user_url}">@%{username}</a> <b>mentioned</b> you
                 in <a href="%{post_url}">%{topic}</a>
 
-                <pre>%{post_excerpt}</pre>
+                <div>%{post_excerpt}</div>
       group_mentioned: |-
                 💬 <a href="%{user_url}">@%{username}</a> <b>mentioned</b> you
                 in <a href="%{post_url}">%{topic}</a>
 
-                <pre>%{post_excerpt}</pre>
+                <div>%{post_excerpt}</div>
       quoted: |-
                 💬 <a href="%{user_url}">@%{username}</a> <b>quoted</b> you
                 in <a href="%{post_url}">%{topic}</a>
 
-                <pre>%{post_excerpt}</pre>
+                <div>%{post_excerpt}</div>
       replied: |-
                 ↩️ <a href="%{user_url}">@%{username}</a> <b>replied</b> to you
                 in <a href="%{post_url}">%{topic}</a>
 
-                <pre>%{post_excerpt}</pre>
+                <div>%{post_excerpt}</div>
       posted: |-
                 💬 <a href="%{user_url}">@%{username}</a> <b>posted</b>
                 in <a href="%{post_url}">%{topic}</a>
 
-                <pre>%{post_excerpt}</pre>
+                <div>%{post_excerpt}</div>
       private_message: |-
                 ✉️ <a href="%{user_url}">@%{username}</a> sent you a <b>private message</b>
                 in <a href="%{post_url}">%{topic}</a>
 
-                <pre>%{post_excerpt}</pre>
+                <div>%{post_excerpt}</div>
       linked: |-
                 🔗 <a href="%{user_url}">@%{username}</a> <b>linked</b> to your post
                 from <a href="%{post_url}">%{topic}</a>
 
-                <pre>%{post_excerpt}</pre>
+                <div>%{post_excerpt}</div>
       watching_first_post: |-
                 💬 <a href="%{user_url}">@%{username}</a> <b>posted</b>
                 in <a href="%{post_url}">%{topic}</a>
 
-                <pre>%{post_excerpt}</pre>
+                <div>%{post_excerpt}</div>
       # Discourse Follow Plugin
       following_replied: |-
                 ↩️👥 <a href="%{user_url}">@%{username}</a> <b>replied</b>
                 in <a href="%{post_url}">%{topic}</a>
 
-                <pre>%{post_excerpt}</pre>
+                <div>%{post_excerpt}</div>
       following_posted: |-
                 💬👥 <a href="%{user_url}">@%{username}</a> <b>posted</b>
                 in <a href="%{post_url}">%{topic}</a>
 
-                <pre>%{post_excerpt}</pre>
+                <div>%{post_excerpt}</div>
