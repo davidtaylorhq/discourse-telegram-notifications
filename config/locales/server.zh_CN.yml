@@ -1,0 +1,50 @@
+zh_CN:
+  site_settings:
+    telegram_notifications_enabled: 启用 telegram 通知?
+    telegram_access_token: 从 Telegram 官方机器人 BotFather 得到的你自己的机器人的 Token，看起来像 110201543:AAHdqTcvCH1vGWJxfSeofSAs0K5PALDsaw
+  discourse_telegram_notifications:
+    initial-contact: "要在 %{site_title} 启用通知，请进入论坛的偏好设置 > 个人资料，输入 'Chat ID'：%{chat_id}"
+    known-user: |-
+     Hi %{username}, 当你在 %{site_title} 上有新的通知时，我会给你留言。
+     你可以直接回复通知，就可以在 %{site_title} 上发布回复。
+     要禁用通知，请访问你的偏好设置。
+    view_online: "在线查看"
+    like: "❤️ 点赞"
+    unlike: "❤️ 取消点赞"
+    already-liked: "你已经赞过这个帖子"
+    like-failed: "点赞失败"
+    like-success: "点赞成功"
+    unlike-failed: "取消点赞失败"
+    unlike-success: "取消点赞成功"
+    reply-error: "❌ 在处理你的回复时发生了一个错误"
+    reply-failed: "❌ 回复失败: \n\n %{errors}"
+    reply-success: "✅ 回复成功 - <a href='%{post_url}'>在线查看</a>"
+    message:
+      mentioned: |-
+                💬 <a href="%{user_url}">@%{username}</a> <b>提及</b> 你
+                在 <a href="%{post_url}">%{topic}</a>
+                <pre>%{post_excerpt}</pre>
+      group_mentioned: |-
+                💬 <a href="%{user_url}">@%{username}</a> <b>提及</b> 你
+                在 <a href="%{post_url}">%{topic}</a>
+                <pre>%{post_excerpt}</pre>
+      quoted: |-
+                💬 <a href="%{user_url}">@%{username}</a> <b>引用</b> 你
+                在 <a href="%{post_url}">%{topic}</a>
+                <pre>%{post_excerpt}</pre>
+      replied: |-
+                ↩️ <a href="%{user_url}">@%{username}</a> <b>回复</b> 给你
+                在 <a href="%{post_url}">%{topic}</a>
+                <pre>%{post_excerpt}</pre>
+      posted: |-
+                💬 <a href="%{user_url}">@%{username}</a> <b>发布</b>
+                在 <a href="%{post_url}">%{topic}</a>
+                <pre>%{post_excerpt}</pre>
+      private_message: |-
+                ✉️ <a href="%{user_url}">@%{username}</a> 发给你 <b>一条私信</b>
+                在 <a href="%{post_url}">%{topic}</a>
+                <pre>%{post_excerpt}</pre>
+      linked: |-
+                🔗 <a href="%{user_url}">@%{username}</a> <b>链接</b> 你的帖子
+                从 <a href="%{post_url}">%{topic}</a>
+                <pre>%{post_excerpt}</pre>

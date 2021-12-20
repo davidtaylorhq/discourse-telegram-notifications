@@ -1,0 +1,6 @@
+zh_CN:
+  js:
+    telegram-notifications:
+      preferences-title: "Telegram 通知"
+      instructions: "输入机器人给你的 'Chat ID' 来启用通知。留空可禁用通知。"
+
