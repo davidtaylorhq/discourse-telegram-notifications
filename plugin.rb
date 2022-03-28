@@ -190,7 +190,7 @@ after_initialize do
   end
 
   DiscourseEvent.on(:site_setting_changed) do |name, old, new|
-    if (name == 'telegram_notifications_enabled') || (name == 'telegram_access_token')
+    if (name == :telegram_notifications_enabled) || (name == :telegram_access_token)
       Jobs.enqueue(:setup_telegram_webhook)
     end
   end
