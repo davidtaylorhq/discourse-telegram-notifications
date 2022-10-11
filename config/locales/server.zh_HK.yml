@@ -1,0 +1,73 @@
+en:
+  site_settings:
+    telegram_notifications_enabled: 啓用 Telegram 通知？
+    telegram_access_token: 使用 Telegram 的 BotFather 獲得你的 Bot Access Token
+  discourse_telegram_notifications:
+    initial-contact: "如要獲得來自 %{site_title} 的通知，請先在你的用戶偏好中輸入 'Chat ID' %{chat_id}"
+    known-user: |-
+     你好 %{username}，每當你有新通知時，我會發送訊息給你。
+     回覆此通知會在 %{site_title} 發佈回覆。
+     如要停用此功能，請在你的用戶偏好中設定。
+    view_online: "線上檢視"
+    like: "❤️ 讚好"
+    unlike: "❤️ 取消讚好"
+    already-liked: "你已經讚好了該帖"
+    like-failed: "讚好不成功"
+    like-success: "成功讚好"
+    unlike-failed: "取消讚好不成功"
+    unlike-success: "成功取消讚好"
+    reply-error: "❌ 處理你的回覆時發生錯誤"
+    reply-failed: "❌ 回覆不成功：\n\n %{errors}"
+    reply-success: "✅ 成功回覆，可以瀏覽：<a href='%{post_url}'>here</a>"
+    message:
+      mentioned: |-
+                💬 在 <a href="%{post_url}">%{topic}</a>
+                <a href="%{user_url}">@%{username}</a> <b>提及了</b>你
+
+                <pre>%{post_excerpt}</pre>
+      group_mentioned: |-
+                💬 在 <a href="%{post_url}">%{topic}</a>
+                <a href="%{user_url}">@%{username}</a> <b>提及了</b>你
+
+                <pre>%{post_excerpt}</pre>
+      quoted: |-
+                💬 在 <a href="%{post_url}">%{topic}</a> 
+                <a href="%{user_url}">@%{username}</a> <b>引用了</b>你
+
+                <pre>%{post_excerpt}</pre>
+      replied: |-
+                ↩️ 在 <a href="%{post_url}">%{topic}</a> 
+                <a href="%{user_url}">@%{username}</a> <b>回覆了</b>你
+
+                <pre>%{post_excerpt}</pre>
+      posted: |-
+                💬 <a href="%{user_url}">@%{username}</a> <b>發佈了</b>
+                <a href="%{post_url}">%{topic}</a>
+
+                <pre>%{post_excerpt}</pre>
+      private_message: |-
+                ✉️ 在 <a href="%{post_url}">%{topic}</a>
+                <a href="%{user_url}">@%{username}</a> 發送了<b>私人訊息</b>給你
+
+                <pre>%{post_excerpt}</pre>
+      linked: |-
+                🔗 在 <a href="%{post_url}">%{topic}</a>
+                <a href="%{user_url}">@%{username}</a> <b>鏈接了</b>你的帖子
+
+                <pre>%{post_excerpt}</pre>
+      watching_first_post: |-
+                💬 <a href="%{user_url}">@%{username}</a> <b>發佈了</b>
+                <a href="%{post_url}">%{topic}</a>
+
+                <pre>%{post_excerpt}</pre>
+      # Discourse Follow Plugin
+      following_replied: |-
+                ↩️👥 在 <a href="%{post_url}">%{topic}</a>
+                <a href="%{user_url}">@%{username}</a> 有<b>新回覆</b>
+                
+                <pre>%{post_excerpt}</pre>
+      following_posted: |-
+                💬👥 <a href="%{user_url}">@%{username}</a> <b>發佈了</b>
+                <a href="%{post_url}">%{topic}</a>
+
+                <pre>%{post_excerpt}</pre>
