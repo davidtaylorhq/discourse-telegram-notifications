@@ -6,3 +6,11 @@ plugins:
   telegram_secret:
     default: ''
     hidden: true
+  telegram_enable_all_notification_types:
+    type: boolean
+    default: true
+    client: false
+  telegram_enabled_notification_types:
+    type: list
+    default: mentioned|replied|quoted|edited|liked|private_message|invited_to_private_message|invitee_accepted|posted|moved_post|linked|granted_badge|invited_to_topic|custom|group_mentioned|group_message_summary|watching_first_post|topic_reminder|liked_consolidated|post_approved|code_review_commit_approved|membership_request_accepted|membership_request_consolidated|bookmark_reminder|reaction|votes_released|event_reminder|event_invitation|chat_mention|chat_message|chat_invitation|chat_group_mention|chat_quoted|assigned|question_answer_user_commented
+    client: false
