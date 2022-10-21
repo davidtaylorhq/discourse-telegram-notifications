@@ -6,3 +6,7 @@ plugins:
   telegram_secret:
     default: ''
     hidden: true
+  telegram_enabled_notification_types:
+    type: list
+    default: mentioned|replied|quoted|posted|linked|private_message|group_mentioned|watching_first_post|event_reminder|event_invitation|following_replied|following_posted
+    client: false
