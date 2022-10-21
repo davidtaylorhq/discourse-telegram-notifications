@@ -2,7 +2,7 @@
 
 # name: discourse-telegram-notifications
 # about: A plugin which posts all user notifications to a telegram message
-# version: 0.21
+# version: 0.22
 # authors: David Taylor
 # url: https://github.com/davidtaylorhq/discourse-telegram-notifications
 
@@ -201,8 +201,8 @@ after_initialize do
         def execute(args)
           return if !SiteSetting.telegram_notifications_enabled?
 
-          unless telegram_enable_all_notification_types
-            return unless telegram_enabled_notification_types.split("|").include?(Notification.types[payload[:notification_type]].to_s)
+          unless SiteSetting.telegram_enable_all_notification_types
+            return unless SiteSetting.telegram_enabled_notification_types.split("|").include?(Notification.types[payload[:notification_type]].to_s)
           end
 
           user = User.find(args[:user_id])
