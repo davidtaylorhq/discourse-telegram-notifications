@@ -2,7 +2,7 @@
 
 # name: discourse-telegram-notifications
 # about: A plugin which posts all user notifications to a telegram message
-# version: 0.2
+# version: 0.21
 # authors: David Taylor
 # url: https://github.com/davidtaylorhq/discourse-telegram-notifications
 
