@@ -201,9 +201,7 @@ after_initialize do
         def execute(args)
           return if !SiteSetting.telegram_notifications_enabled?
 
-          unless SiteSetting.telegram_enable_all_notification_types
-            return unless SiteSetting.telegram_enabled_notification_types.split("|").include?(Notification.types[payload[:notification_type]].to_s)
-          end
+          return unless SiteSetting.telegram_enabled_notification_types.split("|").include?(Notification.types[payload[:notification_type]].to_s)
 
           user = User.find(args[:user_id])
 

@@ -2,8 +2,7 @@ en:
   site_settings:
     telegram_notifications_enabled: Enable telegram notifications?
     telegram_access_token: Obtain your bot's access token from the telegram botfather
-    telegram_enable_all_notification_types: Enable all notification types and ignore "telegram enabled notification types" setting
-    telegram_enabled_notification_types: If "telegram enable all notification types" setting is false, limit notifications sent to Telegram by this selection of types
+    telegram_enabled_notification_types: Limit notifications sent to Telegram by this selection of types
   discourse_telegram_notifications:
     initial-contact: "To get notifications for %{site_title}, enter the 'Chat ID' %{chat_id} in your user preferences"
     known-user: |-
