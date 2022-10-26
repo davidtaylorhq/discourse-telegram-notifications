@@ -1,4 +1,4 @@
-en:
+zh_HK:
   site_settings:
     telegram_notifications_enabled: 啓用 Telegram 通知？
     telegram_access_token: 使用 Telegram 的 BotFather 獲得你的 Bot Access Token
