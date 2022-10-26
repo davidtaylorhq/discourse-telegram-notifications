@@ -1,0 +1,5 @@
+zh_HK:
+  js:
+    telegram-notifications:
+      preferences-title: "Telegram 通知"
+      instructions: "輸入你透過 BotFather 獲得的「Chat ID」來啓動通知。如需停用通知，請留空此欄。"
