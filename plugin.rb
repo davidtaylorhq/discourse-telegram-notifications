@@ -200,6 +200,11 @@ after_initialize do
       class SendTelegramNotifications < ::Jobs::Base
         def execute(args)
           return if !SiteSetting.telegram_notifications_enabled?
+
+          payload = args[:payload]
+
+          return unless SiteSetting.telegram_enabled_notification_types.split("|").include?(Notification.types[payload[:notification_type]].to_s)
+
           user = User.find(args[:user_id])
 
           chat_id = user.custom_fields["telegram_chat_id"]
@@ -207,8 +212,6 @@ after_initialize do
           if (not chat_id.present?) || (chat_id.length < 1)
             return
           end
-
-          payload = args[:payload]
 
           post = Post.where(post_number: payload[:post_number], topic_id: payload[:topic_id]).first
 
