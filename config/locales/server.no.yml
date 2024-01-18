@@ -1,0 +1,74 @@
+no:
+  site_settings:
+    telegram_notifications_enabled: Aktivere Telegram-varsler?
+    telegram_access_token: Skaff botens *access token* fra Telegram BotFather
+    telegram_enabled_notification_types: Begrens varsel-typene som sendes til Telegram her
+  discourse_telegram_notifications:
+    initial-contact: "For å aktivere varsler fra %{site_title}, legg inn 'Chat ID' %{chat_id} i bruker-innstillingene dine på %{site_title}. Du må mest sannsynlig skrolle ned litt."
+    known-user: |-
+      Hei %{username}! Jeg kommer til å sende deg meldinger når du har nye varsler på %{site_title}.
+      Dersom du svarer på meldinga, vil det postes et svar på %{site_title}.
+      For å deaktivere, går du til bruker-innstillingene dine på %{site_title}, og tømmer boksen hvor du la inn 'Chat ID'.
+    view_online: "Til forumet"
+    like: "❤️ Liker"
+    unlike: "💔 Ta bort at du liker"
+    already-liked: "Du har allerede likt den posten."
+    like-failed: "❌ Det funka visst ikke å like posten."
+    like-success: "✅ Du har likt posten."
+    unlike-failed: "❌ Det funka visst ikke å ta bort at du liker den posten."
+    unlike-success: "✅ Du har tatt bort at du liker posten."
+    reply-error: "❌ Det skjedde en feil med sendinga av svaret ditt."
+    reply-failed: "❌ Svar feilet: \n\n %{errors}"
+    reply-success: "✅ Svar lyktes! Se på det <a href='%{post_url}'>her</a>."
+    message:
+      mentioned: |-
+        💬 <a href="%{user_url}">@%{username}</a> <b>nevnte</b> deg
+        i <a href="%{post_url}">%{topic}</a>.
+
+        <pre>%{post_excerpt}</pre>
+      group_mentioned: |-
+        💬 <a href="%{user_url}">@%{username}</a> <b>nevnte</b> deg
+        i <a href="%{post_url}">%{topic}</a>.
+
+        <pre>%{post_excerpt}</pre>
+      quoted: |-
+        💬 <a href="%{user_url}">@%{username}</a> <b>siterte</b> deg
+        i <a href="%{post_url}">%{topic}</a>.
+
+        <pre>%{post_excerpt}</pre>
+      replied: |-
+        ↩️ <a href="%{user_url}">@%{username}</a> <b>svarte</b> deg
+        i <a href="%{post_url}">%{topic}</a>.
+
+        <pre>%{post_excerpt}</pre>
+      posted: |-
+        💬 <a href="%{user_url}">@%{username}</a> <b>la ut noe</b>
+        i <a href="%{post_url}">%{topic}</a>.
+
+        <pre>%{post_excerpt}</pre>
+      private_message: |-
+        ✉️ <a href="%{user_url}">@%{username}</a> har sendt deg en <b>personlig melding</b>
+        i <a href="%{post_url}">%{topic}</a>.
+
+        <pre>%{post_excerpt}</pre>
+      linked: |-
+        🔗 <a href="%{user_url}">@%{username}</a> <b>lenka</b> til innlegget ditt
+        fra <a href="%{post_url}">%{topic}</a>.
+
+        <pre>%{post_excerpt}</pre>
+      watching_first_post: |-
+        💬 <a href="%{user_url}">@%{username}</a> <b>la ut noe</b>
+        i <a href="%{post_url}">%{topic}</a>.
+
+        <pre>%{post_excerpt}</pre>
+      # Discourse Follow Plugin
+      following_replied: |-
+        ↩️👥 <a href="%{user_url}">@%{username}</a> <b>svarte noen</b>
+        i <a href="%{post_url}">%{topic}</a>.
+
+        <pre>%{post_excerpt}</pre>
+      following_posted: |-
+        💬👥 <a href="%{user_url}">@%{username}</a> <b>skrev noe</b>
+        i <a href="%{post_url}">%{topic}</a>.
+
+        <pre>%{post_excerpt}</pre>

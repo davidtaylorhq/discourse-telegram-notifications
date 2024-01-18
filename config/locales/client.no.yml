@@ -1,0 +1,5 @@
+no:
+  js:
+    telegram-notifications:
+      preferences-title: "Telegram-varsler"
+      instructions: "Legg inn 'Chat-ID.en' du fikk av boten, for å aktivere varsler. Tøm boksen for å deaktivere."
