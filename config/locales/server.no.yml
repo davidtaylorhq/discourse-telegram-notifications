@@ -1,4 +1,4 @@
-en:
+no:
   site_settings:
     telegram_notifications_enabled: Aktivere Telegram-varsler?
     telegram_access_token: Skaff botens *access token* fra Telegram BotFather
