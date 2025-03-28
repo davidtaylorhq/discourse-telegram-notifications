@@ -1,0 +1,5 @@
+ru:
+  js:
+    telegram-notifications:
+      preferences-title: "Уведомления в Telegram"
+      instructions: "Введите 'Chat ID', который вам выдал бот, чтобы включить уведомления. Оставьте поле пустым, чтобы отключить их."

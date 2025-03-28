@@ -1,0 +1,74 @@
+ru:
+  site_settings:
+    telegram_notifications_enabled: "Включить уведомления в Telegram?"
+    telegram_access_token: "Получите токен доступа для вашего бота у @BotFather в Telegram"
+    telegram_enabled_notification_types: "Ограничить уведомления в Telegram по типам"
+  discourse_telegram_notifications:
+    initial-contact: "Чтобы получать уведомления от %{site_title}, введите 'Chat ID' %{chat_id} в настройках вашего профиля"
+    known-user: |-
+      Привет, %{username}! Я буду присылать уведомления о новых событиях на %{site_title}. 
+      Ответив здесь, вы опубликуете сообщение в теме на %{site_title}.
+      Чтобы отключить уведомления, измените настройки профиля.
+    view_online: "Посмотреть на сайте"
+    like: "❤️ Нравится"
+    unlike: "❤️ Убрать лайк"
+    already-liked: "Вы уже лайкнули этот пост"
+    like-failed: "Ошибка при добавлении лайка"
+    like-success: "Лайк успешно поставлен"
+    unlike-failed: "Ошибка при удалении лайка"
+    unlike-success: "Лайк успешно убран"
+    reply-error: "❌ Ошибка при обработке вашего ответа"
+    reply-failed: "❌ Ошибка отправки ответа: \n\n %{errors}"
+    reply-success: "✅ Ответ успешно отправлен — посмотреть <a href='%{post_url}'>здесь</a>"
+    message:
+      mentioned: |-
+                💬 <a href="%{user_url}">@%{username}</a> <b>упомянул(а)</b> вас
+                в <a href="%{post_url}">%{topic}</a>
+
+                <pre>%{post_excerpt}</pre>
+      group_mentioned: |-
+                💬 <a href="%{user_url}">@%{username}</a> <b>упомянул(а)</b> вашу группу
+                в <a href="%{post_url}">%{topic}</a>
+
+                <pre>%{post_excerpt}</pre>
+      quoted: |-
+                💬 <a href="%{user_url}">@%{username}</a> <b>процитировал(а)</b> вас
+                в <a href="%{post_url}">%{topic}</a>
+
+                <pre>%{post_excerpt}</pre>
+      replied: |-
+                ↩️ <a href="%{user_url}">@%{username}</a> <b>ответил(а)</b> вам
+                в <a href="%{post_url}">%{topic}</a>
+
+                <pre>%{post_excerpt}</pre>
+      posted: |-
+                💬 <a href="%{user_url}">@%{username}</a> <b>написал(а)</b>
+                в <a href="%{post_url}">%{topic}</a>
+
+                <pre>%{post_excerpt}</pre>
+      private_message: |-
+                ✉️ <a href="%{user_url}">@%{username}</a> отправил(а) вам <b>личное сообщение</b>
+                в <a href="%{post_url}">%{topic}</a>
+
+                <pre>%{post_excerpt}</pre>
+      linked: |-
+                🔗 <a href="%{user_url}">@%{username}</a> <b>сослался(ась)</b> на ваш пост
+                в <a href="%{post_url}">%{topic}</a>
+
+                <pre>%{post_excerpt}</pre>
+      watching_first_post: |-
+                💬 <a href="%{user_url}">@%{username}</a> <b>опубликовал(а)</b> пост
+                в <a href="%{post_url}">%{topic}</a>
+
+                <pre>%{post_excerpt}</pre>
+      # Discourse Follow Plugin
+      following_replied: |-
+                ↩️👥 <a href="%{user_url}">@%{username}</a> <b>ответил(а)</b>
+                в <a href="%{post_url}">%{topic}</a>
+
+                <pre>%{post_excerpt}</pre>
+      following_posted: |-
+                💬👥 <a href="%{user_url}">@%{username}</a> <b>написал(а)</b>
+                в <a href="%{post_url}">%{topic}</a>
+
+                <pre>%{post_excerpt}</pre>
