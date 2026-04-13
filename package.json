@@ -1,0 +1,16 @@
+{
+  "name": "discourse-telegram-notifications",
+  "version": "1.0.0",
+  "description": "A plugin for Discourse which allows users to receive their notifications by telegram message",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@prettier/plugin-ruby": "^4.0.4",
+    "prettier": "^3.6.2"
+  }
+}

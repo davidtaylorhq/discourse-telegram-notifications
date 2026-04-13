@@ -1,0 +1,5 @@
+{
+  "plugins": ["@prettier/plugin-ruby"],
+  "singleQuote": true,
+  "rubySingleQuote": true
+}

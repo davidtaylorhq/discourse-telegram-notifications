@@ -1,0 +1,2 @@
+U:RDoc::Attr[iI"warnings:ETI"'MiniMagick::Configuration#warnings;TI"RW;T:publico:RDoc::Markup::Document:@parts[o:RDoc::Markup::Paragraph;	[I"IIf set to `false`, it will not forward warnings from ImageMagick to ;TI"standard error.;T:
+@fileI"%lib/mini_magick/configuration.rb;T:0@omit_headings_from_table_of_contents_below0F@I"MiniMagick::Configuration;TcRDoc::NormalModule0
