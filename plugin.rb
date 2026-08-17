@@ -83,28 +83,34 @@ after_initialize do
           end
 
           if found_post
+            reply_text = params['message']['text']
 
-            new_post = {
-              raw: params['message']['text'],
-              topic_id: reply_to.topic_id,
-              reply_to_post_number: reply_to.post_number,
-            }
-
-            manager = NewPostManager.new(user, new_post)
-            result = manager.perform
-
-            if result.errors.any?
-              errors = result.errors.full_messages.join("\n")
-
-              message_text = I18n.t(
-                "discourse_telegram_notifications.reply-failed",
-                errors: errors
-              )
+            if reply_text.blank?
+              # Non-text reply (photo, sticker, voice, ...): nothing to post as raw.
+              message_text = I18n.t("discourse_telegram_notifications.reply-error")
             else
-              message_text = I18n.t(
-                "discourse_telegram_notifications.reply-success",
-                post_url: result.post.full_url
-              )
+              new_post = {
+                raw: reply_text,
+                topic_id: reply_to.topic_id,
+                reply_to_post_number: reply_to.post_number,
+              }
+
+              manager = NewPostManager.new(user, new_post)
+              result = manager.perform
+
+              if result.errors.any?
+                errors = result.errors.full_messages.join("\n")
+
+                message_text = I18n.t(
+                  "discourse_telegram_notifications.reply-failed",
+                  errors: errors
+                )
+              else
+                message_text = I18n.t(
+                  "discourse_telegram_notifications.reply-success",
+                  post_url: result.post.full_url
+                )
+              end
             end
           else
             message_text = I18n.t("discourse_telegram_notifications.reply-error")
