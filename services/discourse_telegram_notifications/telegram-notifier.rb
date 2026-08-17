@@ -31,6 +31,8 @@ module DiscourseTelegramNotifications
     def self.doRequest(methodName, message)
       http = Net::HTTP.new("api.telegram.org", 443)
       http.use_ssl = true
+      http.open_timeout = 5
+      http.read_timeout = 10
 
       access_token = SiteSetting.telegram_access_token
 
@@ -38,9 +40,13 @@ module DiscourseTelegramNotifications
 
       req = Net::HTTP::Post.new(uri, 'Content-Type' =>'application/json')
       req.body = message.to_json
-      response = http.request(req)
-
-      responseData = JSON.parse(response.body)
+      begin
+        response = http.request(req)
+        responseData = JSON.parse(response.body)
+      rescue Net::OpenTimeout, Net::ReadTimeout, Timeout::Error, OpenSSL::SSL::SSLError, EOFError, SocketError, SystemCallError, JSON::ParserError => e
+        Rails.logger.error("Telegram request to #{methodName} failed: #{e.class}: #{e.message}")
+        return false
+      end
 
       if not responseData['ok'] == true
         Rails.logger.error("Failed to send Telegram message. Message data= "+req.body.to_json+ " response="+response.body.to_json)
