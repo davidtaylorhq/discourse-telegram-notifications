@@ -215,6 +215,10 @@ after_initialize do
 
           post = Post.where(post_number: payload[:post_number], topic_id: payload[:topic_id]).first
 
+          # No resolvable post (e.g. deleted, or a notification type without a
+          # matching post): nothing to link/like, so skip rather than crash on post.id.
+          return if post.nil?
+
           message_text = I18n.t(
               "discourse_telegram_notifications.message.#{Notification.types[payload[:notification_type]]}",
               site_title: CGI::escapeHTML(SiteSetting.title),
