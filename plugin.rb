@@ -138,10 +138,9 @@ after_initialize do
           rescue PostAction::AlreadyActed
             string = I18n.t("discourse_telegram_notifications.already-liked")
           rescue Discourse::InvalidAccess
-            string = I18n.t("discourse_telegram_notifications.like-fail")
+            string = I18n.t("discourse_telegram_notifications.like-failed")
           end
 
-          DiscourseTelegramNotifications::TelegramNotifier.answerCallback(params['callback_query']['id'], string)
         elsif data[0] == 'unlike'
 
           begin
