@@ -122,12 +122,18 @@ after_initialize do
         DiscourseTelegramNotifications::TelegramNotifier.sendMessage(message)
       elsif params.key?('callback_query')
         chat_id = params['callback_query']['message']['chat']['id']
-        user_id = UserCustomField.where(name: "telegram_chat_id", value: chat_id).first.user_id
-        user = User.find(user_id)
+        user_custom_field = UserCustomField.find_by(name: "telegram_chat_id", value: chat_id)
+        user = user_custom_field && User.find_by(id: user_custom_field.user_id)
 
-        data = params['callback_query']['data'].split(":")
+        data = params['callback_query']['data'].to_s.split(":")
+        post = Post.find_by(id: data[1])
 
-        post = Post.find(data[1])
+        # Ignore callbacks from unknown chats or for posts that no longer exist
+        # (e.g. stale inline buttons); acknowledge so Telegram stops retrying.
+        if user.nil? || post.nil?
+          DiscourseTelegramNotifications::TelegramNotifier.answerCallback(params['callback_query']['id'], "")
+          return render json: { success: true }
+        end
 
         string = I18n.t("discourse_telegram_notifications.error-unknown-action")
 
