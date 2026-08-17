@@ -38,7 +38,7 @@ after_initialize do
 
     def hook
       if not SiteSetting.telegram_notifications_enabled
-        render status: 404
+        return render(body: nil, status: 404)
       end
 
       if not (defined? params['key'] && (params['key'] == SiteSetting.telegram_secret))
