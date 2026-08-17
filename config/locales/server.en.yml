@@ -3,6 +3,7 @@ en:
     telegram_notifications_enabled: Enable telegram notifications?
     telegram_access_token: Obtain your bot's access token from the telegram botfather
     telegram_enabled_notification_types: Limit notifications sent to Telegram by this selection of types
+    telegram_message_map_max_entries: "How many recent notification-to-post mappings to keep for routing Telegram replies. Older mappings are pruned daily. 0 disables pruning."
   discourse_telegram_notifications:
     initial-contact: "To get notifications for %{site_title}, enter the 'Chat ID' %{chat_id} in your user preferences"
     known-user: |-

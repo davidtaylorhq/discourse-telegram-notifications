@@ -10,3 +10,7 @@ plugins:
     type: list
     default: mentioned|replied|quoted|posted|linked|private_message|group_mentioned|watching_first_post|event_reminder|event_invitation|following_replied|following_posted
     client: false
+  telegram_message_map_max_entries:
+    default: 10000
+    min: 0
+    hidden: true
