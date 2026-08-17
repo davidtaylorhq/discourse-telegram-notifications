@@ -17,7 +17,8 @@ en:
     like-success: "Like successful"
     unlike-failed: "Unliking that post failed"
     unlike-success: "Unlike successful"
-    reply-error: "❌ An error occured while processing your reply"
+    error-unknown-action: "❌ Unknown action"
+    reply-error: "❌ An error occurred while processing your reply"
     reply-failed: "❌ Reply failed: \n\n %{errors}"
     reply-success: "✅ Reply successful - view it <a href='%{post_url}'>here</a>"
     message:
