@@ -247,12 +247,12 @@ after_initialize do
 
       class SetupTelegramWebhook < ::Jobs::Base
         def execute(args)
-          return if !SiteSetting.telegram_notifications_enabled?
-
-          SiteSetting.telegram_secret = SecureRandom.hex
-
-          DiscourseTelegramNotifications::TelegramNotifier.setupWebhook(SiteSetting.telegram_secret)
-
+          if SiteSetting.telegram_notifications_enabled?
+            SiteSetting.telegram_secret = SecureRandom.hex
+            DiscourseTelegramNotifications::TelegramNotifier.setupWebhook(SiteSetting.telegram_secret)
+          else
+            DiscourseTelegramNotifications::TelegramNotifier.deleteWebhook
+          end
         end
       end
 

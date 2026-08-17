@@ -24,6 +24,15 @@ module DiscourseTelegramNotifications
       return self.doRequest('setWebhook', message)
     end
 
+    def self.deleteWebhook
+      return false if SiteSetting.telegram_access_token.blank?
+
+      self.doRequest('deleteWebhook', {})
+    rescue StandardError => e
+      Rails.logger.error("Failed to delete Telegram webhook: #{e.class}: #{e.message}")
+      false
+    end
+
     def self.editKeyboard(message)
       return self.doRequest('editMessageReplyMarkup', message)
     end
