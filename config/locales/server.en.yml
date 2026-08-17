@@ -72,3 +72,14 @@ en:
                 in <a href="%{post_url}">%{topic}</a>
 
                 <pre>%{post_excerpt}</pre>
+      # Discourse Calendar Plugin
+      event_reminder: |-
+                📅 <b>Event reminder</b>
+                in <a href="%{post_url}">%{topic}</a>
+
+                <pre>%{post_excerpt}</pre>
+      event_invitation: |-
+                📅 <a href="%{user_url}">@%{username}</a> <b>invited you to an event</b>
+                in <a href="%{post_url}">%{topic}</a>
+
+                <pre>%{post_excerpt}</pre>
